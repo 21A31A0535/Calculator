@@ -1,0 +1,93 @@
+<html>
+<head>
+	<style>
+	#main{width: 300px;height: 280;background-color: black;}
+	input {width: 20%;height: 40px;
+		font-size: 20px;
+		margin: 6px;}
+		#su{
+			width: 95%;
+			height: 50px;
+			background-color: silver;
+		}
+</style>
+	</head>
+	<body>
+		<div id="main">
+		<form name="f">
+			<input type="text" name="suji" placeholder="0" id="su"><br>
+			<input type="button" value="1" onclick="f.suji.value+=1">
+			<input type="button" value="2" onclick="f.suji.value+=2">
+			<input type="button" value="3" onclick="f.suji.value+=3">
+			<input type="button" value="+" onclick="add()"><br>
+			<input type="button" value="4" onclick="f.suji.value+=4">
+			<input type="button" value="5" onclick="f.suji.value+=5">
+			<input type="button" value="6" onclick="f.suji.value+=6">
+			<input type="button" value="-" onclick="sub()"><br>
+			<input type="button" value="7" onclick="f.suji.value+=7">
+			<input type="button" value="8" onclick="f.suji.value+=8">
+			<input type="button" value="9" onclick="f.suji.value+=9">
+			<input type="button" value="x" onclick="mul()"><br>
+			<input type="button" value="c" onclick="f.suji.value=''">
+			<input type="button" value="0" onclick="f.suji.value+=0">
+			<input type="button" value="=" onclick="f.suji.value=eval(f.suji.value)">
+			<input type="button" value="/" onclick="div()">
+</form>
+</div>
+<script>
+	function add(){
+		var a=0,b=0;
+a=f.suji.value;
+b=a.charAt(a.length-1);
+if( b=='+' || b=='-' || b=='/' || b=='*'){
+	f.suji.value=a.substring(0,a.length-1);
+	f.suji.value+='+';
+}
+else{
+	f.suji.value+='+';
+}
+	}
+
+
+function sub(){
+		var a=0,b=0;
+a=f.suji.value;
+b=a.charAt(a.length-1);
+if(b=='+' || b=='-' || b=='/' || b=='*'){
+	f.suji.value=a.substring(0,a.length-1);
+	f.suji.value+='-';
+}
+else{
+	f.suji.value+='-';
+}
+	}
+
+	function mul(){
+		var a=0,b=0;
+a=f.suji.value;
+b=a.charAt(a.length-1);
+if(b=='+' || b=='-' || b=='/' || b=='*'){
+	f.suji.value=a.substring(0,a.length-1);
+	f.suji.value+='*';
+}
+else{
+	f.suji.value+='*';
+}
+	}
+
+	function div(){
+		var a=0,b=0;
+a=f.suji.value;
+b=a.charAt(a.length-1);
+if(b=='+' || b=='-' || b=='/' || b=='*'){
+	f.suji.value=a.substring(0,a.length-1);
+	f.suji.value+='/';
+}
+else{
+	f.suji.value+='/';
+}
+	}
+
+</script>
+	</body>
+	</html>
